@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Quantities</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Available Quantities</h1>
+
+        <!-- Form for available quantities -->
+        <form method="POST">
+            <div class="row">
+                {% for category in categories %}
+                <div class="input-group">
+                    <label for="available{{ loop.index }}">{{ category }}</label>
+                    <input type="number" id="available{{ loop.index }}" name="available" placeholder="Enter quantity">
+                </div>
+                {% endfor %}
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+

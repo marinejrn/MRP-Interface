@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles2.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Dashboard</h1>
+
+        <!-- Buttons for Download and Data Entry -->
+        <div class="button-container">
+            <a href="{{ url_for('download_excel') }}" class="button">Download Excel File</a>
+            <a href="{{ url_for('gross_requirements') }}" class="button">Start Data Entry</a>
+        </div>
+
+        <!-- Form to change the Excel file path -->
+        <div class="path-container">
+            <form method="POST" action="{{ url_for('update_excel_path') }}">
+                <label for="excel_path">Update Excel Path:</label>
+                <input type="text" id="excel_path" name="excel_path" placeholder="Enter the new Excel file path" required>
+                <button type="submit" class="button">Update Path</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
